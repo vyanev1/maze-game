@@ -1,0 +1,8 @@
+19 4 asen
+10 1 player1
+20 1 player2
+30 1 player3
+40 2 desi_gamer_girl
+50 2 viktor
+99 3 stoyan
+100 4 ayylmao

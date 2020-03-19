@@ -159,6 +159,7 @@ class Game:
                 print("You won the game! Congratulations!")
                 self.update_leaderboard()
                 break
+        
         self.print_leaderboard()
         input("Type enter to exit.")
 
@@ -184,8 +185,7 @@ class Game:
                 count += 1
         f.close()
 
-    @staticmethod
-    def update_leaderboard():
+    def update_leaderboard(self):
         name = input("Type in your name:")
         f = open("leaderboard.txt", "a")
         f.write(f"{self._count} {self.difficulty} {name}\n")

@@ -143,10 +143,12 @@ class Hero:
             elif environment.get_coord(self._coordX, self._coordY) == 3:
                 environment.set_coord(self._coordX, self._coordY, 2)
                 goblin = environment.objects[(self._coordX, self._coordY)]
+                goblin.visited = True
                 goblin.activate_ability(self.game)
             # if the hero steps at a monster's position activate the monster's abilities
             elif environment.get_coord(self._coordX, self._coordY) == 4:
                 monster = environment.objects[(self._coordX, self._coordY)]
+                monster.visited = True
                 monster.activate_ability(self.game)
                 # retain the monster on the map
 

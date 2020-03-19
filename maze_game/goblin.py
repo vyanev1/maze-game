@@ -118,6 +118,8 @@ class GamerGoblin(Goblin):
         coinsWon, healthRestored = self.give_coins_health()
         game.myHero.coins += coinsWon
         game.myHero.health += healthRestored
+        if game.myHero.health > 100:
+            game.myHero.health = 100
 
         sleep(1)
         print(f"Your hero gained {healthRestored} health and {coinsWon} coins.")
@@ -147,19 +149,19 @@ def rock_paper_scissors():
 
     while roundsLost < 2 and roundsWon < 2:
         print(f"Round {round}!")
-        ch2 = getch()
-        while ch2 == b'\xe0':
-            ch2 = getch()
-        if ch2 in (b'r', b'R'):
-            heroMove = "rock"
-        elif ch2 in (b'p', b'P'):
-            heroMove = "paper"
-        elif ch2 in (b's', b'S'):
-            heroMove = "scissors"
-        else:
-            print("Please press a valid button.")
-            continue
-
+        # ch2 = getch()
+        # while ch2 == b'\xe0':
+        #     ch2 = getch()
+        # if ch2 in (b'r', b'R'):
+        #     heroMove = "rock"
+        # elif ch2 in (b'p', b'P'):
+        #     heroMove = "paper"
+        # elif ch2 in (b's', b'S'):
+        #     heroMove = "scissors"
+        # else:
+        #     print("Please press a valid button.")
+        #     continue
+        heroMove = random.choice(["rock","paper","scissors"])
         monsterMove = random.choice(["rock", "paper", "scissors"])
         print(f"Hero played {heroMove}.")
         print(f"Monster played {monsterMove}.")

@@ -36,7 +36,7 @@ class ThiefMonster(Monster):
         # steal from the hero number of coins for a % chance
         # ability = (coins,chance)
         # adjust the monster's ability depending on the difficulty level
-        self.ability = (random.randrange(50, 101)*game.difficulty, random.randrange(20, 101)*game.difficulty)
+        self.ability = (random.randrange(50, 101)*math.sqrt(game.difficulty), random.randrange(20, 101)*math.sqrt(game.difficulty))
 
     def activate_ability(self, game):
         coinsLost = self.steal_coins()
@@ -69,7 +69,7 @@ class FighterMonster(Monster):
         # drop amount of hero's health for a chance of a random %
         # ability = (health,chance)
         # adjust the monster's ability depending on the difficulty level
-        self.ability = (random.randrange(10, 30)*math.sqrt(game.difficulty), random.randrange(20, 101)*game.difficulty)
+        self.ability = (random.randrange(10, 20)*math.sqrt(game.difficulty), random.randrange(20, 101)*math.sqrt(game.difficulty))
 
     def activate_ability(self, game):
         healthLost = self.fight()
@@ -105,7 +105,7 @@ class GamerMonster(Monster):
         # if the monster wins the game, the hero will lose specified number of coins and health points
         # adjust the monster's ability depending on the difficulty level
         # ability = (coins,health)
-        self.ability = (random.randrange(50, 201)/game.difficulty, random.randrange(0, 101)/game.difficulty)
+        self.ability = (random.randrange(50, 101)*math.sqrt(game.difficulty), random.randrange(10, 20)*math.sqrt(game.difficulty))
 
     def activate_ability(self, game):
         sleep(1)
